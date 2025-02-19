@@ -7,13 +7,17 @@ export default function App() {
         return new Array(10).fill(0).map(() => Math.ceil(Math.random() * 6));
     }
 
+    const diceComponents = diceArr.map((val) => <Die value={val} />);
+
+    function rollDice() {
+        setDiceArr(generateAllNewDice());
+    }
     return (
         <main>
-            <div className="dice-container">
-                {diceArr.map((val) => (
-                    <Die value={val} />
-                ))}
-            </div>
+            <div className="dice-container">{diceComponents}</div>
+            <button onClick={rollDice} className="roll-btn">
+                Roll
+            </button>
         </main>
     );
 }
