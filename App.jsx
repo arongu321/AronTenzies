@@ -6,11 +6,13 @@ export default function App() {
     function generateAllNewDice() {
         return new Array(10).fill(0).map(() => ({
             value: Math.ceil(Math.random() * 6),
-            isHeld: false,
+            isHeld: true,
         }));
     }
 
-    const diceComponents = dice.map((item) => <Die value={item.value} />);
+    const diceComponents = dice.map((item) => (
+        <Die isHeld={item.isHeld} value={item.value} />
+    ));
 
     function rollDice() {
         setDice(generateAllNewDice());
