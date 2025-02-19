@@ -4,7 +4,8 @@ import { nanoid } from 'nanoid';
 import ReactConfetti from 'react-confetti';
 
 export default function App() {
-    const [dice, setDice] = useState(generateAllNewDice());
+    // () => generateAllNewDice() is lazy state initialization so the state isn't regenerated again
+    const [dice, setDice] = useState(() => generateAllNewDice());
     function generateAllNewDice() {
         return new Array(10).fill(0).map(() => ({
             value: Math.ceil(Math.random() * 6),
