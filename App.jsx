@@ -94,7 +94,11 @@ export default function App() {
 
             {/* Dice container */}
             <div className="dice-container">{diceComponents}</div>
-            <button onClick={gameWon ? newGame : rollDice} className="roll-btn">
+            <button
+                ref={buttonRef}
+                onClick={gameWon ? newGame : rollDice}
+                className="roll-btn"
+            >
                 {gameWon ? 'New Game' : 'Roll'}
             </button>
         </main>
