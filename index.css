@@ -11,6 +11,7 @@ body {
     height: 100vh;
 }
 
+/* Root container  */
 div#root {
     height: 100%;
     width: 100%;
@@ -18,8 +19,33 @@ div#root {
     max-width: 400px;
 }
 
+/* Main content of page */
 main {
     background: #f5f5f5;
     border-radius: 10px;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dice container */
+div.dice-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* Die button */
+button.die-component {
+    height: 48px;
+    width: 48px;
+    border: none;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
 }
