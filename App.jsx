@@ -42,6 +42,10 @@ export default function App() {
         );
     }
 
+    function newGame() {
+        setDice(generateAllNewDice());
+    }
+
     const gameWon =
         dice.every((item) => item.isHeld) &&
         dice.every((item) => item.value === dice[0].value);
@@ -57,7 +61,7 @@ export default function App() {
                 </p>
             </header>
             <div className="dice-container">{diceComponents}</div>
-            <button onClick={rollDice} className="roll-btn">
+            <button onClick={gameWon ? newGame : rollDice} className="roll-btn">
                 {gameWon ? 'New Game' : 'Roll'}
             </button>
         </main>
