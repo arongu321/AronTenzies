@@ -50,6 +50,10 @@ button.die-component {
     cursor: pointer;
 }
 
+button.die-component[is-held] {
+    background: #59e391;
+}
+
 /* Roll dice button */
 button.roll-btn {
     width: 92px;
