@@ -53,6 +53,14 @@ export default function App() {
     return (
         <main>
             {gameWon && <ReactConfetti />}
+            <div aria-live="polite" className="sr-only">
+                {gameWon && (
+                    <p>
+                        Congratulations! You won! Press "New Game" to start
+                        again.
+                    </p>
+                )}
+            </div>
             <header className="header">
                 <h1 className="title">Tenzies</h1>
                 <p>
